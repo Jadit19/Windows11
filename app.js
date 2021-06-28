@@ -1,7 +1,6 @@
 
 var start = document.getElementById('start');
 var home = document.getElementById('home');
-
 home.addEventListener('click', () => {
     if (start.style.bottom == "0px"){
         start.style.bottom = "80px";
@@ -17,6 +16,8 @@ home.addEventListener('click', () => {
     }
 });
 
+//====================================================================
+
 var power = document.getElementById('power-off-btn');
 var power_content = document.getElementById('power-content');
 var cross = document.getElementById('cross');
@@ -29,4 +30,22 @@ cross.addEventListener('click', () => {
     power_content.style.opacity = 0;
     power_content.style.zIndex = -4;
     power_content.style.cursor = "default";
+});
+
+//=====================================================================
+
+var search = document.getElementById('search');
+var searchLabel = document.getElementById('search-label');
+searchLabel.addEventListener('click', () => {
+    if (search.style.width == "0px") {
+        search.style.zIndex = 5;
+        search.style.opacity = 1;
+        search.style.width = "300px";
+        search.style.left = "calc(50% + 85px)";
+    } else {
+        search.style.zIndex = -1;
+        search.style.opacity = 0;
+        search.style.width = "0px";
+        search.style.left = "calc(50% - 60px)";
+    }
 });

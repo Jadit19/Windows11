@@ -42,12 +42,12 @@
     </head>
     <body onload="startTime()">
 
-        <!-- ========== BACKGROUND VIDEO ========== -->
+        <!-- ============================== BACKGROUND VIDEO ============================== -->
         <video autoplay muted>
             <source src="./imgs/video.webm" type="video/webm">
         </video>
 
-        <!-- ========== DESKTOP ICONS ========== -->
+        <!-- ============================== DESKTOP ICONS ============================== -->
         <section class=".icon-container">
             <div class="icons" style="animation-delay: 0s;">
                 <img src="./imgs/chromeIcon.png">
@@ -67,7 +67,7 @@
             </div>
         </section>
 
-        <!-- ========== START MENU ========== -->
+        <!-- ============================== START MENU ============================== -->
         <section class="start" id="start" style="bottom: 0px;">
             <h3>Pinned</h3>
             <div class="pinned">
@@ -169,10 +169,13 @@
             </div>
         </section>
 
-        <!-- ========== TASKBAR ========== -->
+        <!-- ============================== TASKBAR ============================== -->
         <section class="taskbar">
             <img src="./imgs/startIcon.png" id="home">
-            <img src="./imgs/searchIcon.png" style="transform: scaleX(-1); width: 30px; height: 30px;">
+            <label for="search" id="search-label">
+                <img src="./imgs/searchIcon.png" style="transform: scaleX(-1); width: 30px; height: 30px;">
+            </label>
+            <input type="search" class="bottom-search" id="search" style="width: 0px;">
             <img src="./imgs/fileExplorerIcon.png">
             <img src="./imgs/chromeIcon.png">
             <img src="./imgs/edgeIcon.png">

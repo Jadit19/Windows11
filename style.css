@@ -20,7 +20,7 @@ video{
     z-index: -10;
 }
 
-/* ========== DESKTOP ICON STYLIZING ========== */
+/* ============================== DESKTOP ICON STYLIZING ============================== */
 .icon-container{
     width: 100%;
     height: calc(100vh - 70px);
@@ -55,7 +55,7 @@ video{
     text-align: center;
 }
 
-/* ========== START MENU STYLIZING ========== */
+/* ============================== START MENU STYLIZING ============================== */
 section.start{
     width: 30%;
     min-width: 500px;
@@ -126,6 +126,7 @@ section.start{
     left: 0px;
     position: absolute;
     padding-left: 40px;
+    font-weight: 600;
 }
 .start-end-right{
     justify-content: flex-end;
@@ -138,7 +139,8 @@ section.start{
     right: 0px;
     bottom: 0px;
     height: auto;
-    width: 200px;
+    width: 150px;
+    font-weight: 100;
     background-color: rgb(0, 174, 255);
     display: flex;
     flex-direction: column;
@@ -148,6 +150,7 @@ section.start{
     border-radius: 10px;
 }
 .power-items{
+    font-size: 1.1rem;
     width: 100%;
     height: auto;
     margin-bottom: 5px;
@@ -159,7 +162,7 @@ section.start{
     background-color: rgb(0, 153, 255);
 }
 
-/* ========== TASKBAR STYLIZING ========== */
+/* ============================== TASKBAR STYLIZING ============================== */
 section.taskbar{
     position: absolute;
     bottom: 0px;
@@ -188,6 +191,24 @@ section.taskbar{
 .taskbar img:first-child:hover{
     transform: translateY(0px);
 }
+
+#search{
+    height: 44px;
+    width: 0px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 5px;
+    left: calc(50% - 60px);
+    transform: translateX(-50%);
+    border: 2px solid rgb(154, 214, 253);
+    outline: none;
+    padding: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    font-size: 1.2rem;
+}
+
 .taskbarRight{
     justify-content: flex-end;
     position: absolute;
