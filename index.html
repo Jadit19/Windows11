@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Clone</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+    
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var ampm = h >= 12 ? 'PM' : 'AM';
+            h = h%12;
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('time').innerHTML =
+            h + ":" + m + " " + ampm;
+            var t = setTimeout(startTime, 500);
+
+            var myDay = today.getDay();
+            var weekday = ['Sunday', 'Monday', 'Tuesday',
+                'Wednesday', 'Thursday', 'Friday', 'Saturday'
+            ];
+            document.getElementById('day').innerHTML = weekday[myDay];
+
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //As January is 0.
+            var yyyy = today.getFullYear();
+            document.getElementById('date').innerHTML = dd + "/" + mm + "/" + yyyy;
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+</head>
+<body onload="startTime()">
+    <!-- ========== BACKGROUND VIDEO ========== -->
+    <video autoplay muted>
+        <source src="./imgs/video.webm" type="video/webm">
+    </video>
+
+    <!-- ========== DESKTOP ICONS ========== -->
+    <section class=".icon-container">
+        <div class="icons" style="animation-delay: 0s;">
+            <img src="./imgs/chromeIcon.png">
+            <span>Google Chrome</span>
+        </div>
+        <div class="icons" style="animation-delay: 0.2s;">
+            <img src="./imgs/recycleBinIcon.png">
+            <span>Recycle Bin</span>
+        </div>
+        <div class="icons" style="animation-delay: 0.4s;">
+            <img src="./imgs/edgeIcon.png">
+            <span>Edge</span>
+        </div>
+        <div class="icons" style="animation-delay: 0.6s;">
+            <img src="./imgs/fileIcon.png">
+            <span>New Folder</span>
+        </div>
+    </section>
+
+    <!-- ========== START MENU ========== -->
+    <section class="start" id="start">
+        Hello
+    </section>
+
+    <!-- ========== TASKBAR ========== -->
+    <section class="taskbar">
+        <img src="./imgs/startIcon.png" id="home">
+        <img src="./imgs/searchIcon.png" style="transform: scaleX(-1); width: 30px; height: 30px;">
+        <img src="./imgs/fileExplorerIcon.png">
+        <img src="./imgs/chromeIcon.png">
+        <img src="./imgs/edgeIcon.png">
+        <div class="taskbarRight">
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-volume-up"></i>
+            <div class="info">
+                <div class="info-text" id="time"></div>
+                <div class="info-text" id="day"></div>
+                <div class="info-text" id="date"></div>
+            </div>
+            <i class="far fa-comment-alt"></i>
+        </div>
+    </section>
+
+    <script src="./app.js"></script>
+</body>
+</html>
