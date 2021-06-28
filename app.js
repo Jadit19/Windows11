@@ -11,7 +11,7 @@ home.addEventListener('click', () => {
     } else {
         // start.innerHTML = '';
         start.style.bottom = "0px";
-        start.style.zIndex = -1;
+        start.style.zIndex = -11;
         start.style.opacity = 0;
         console.log('Closed Start Menu');
     }
