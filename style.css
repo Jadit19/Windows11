@@ -57,18 +57,105 @@ video{
 
 /* ========== START MENU STYLIZING ========== */
 section.start{
-    width: 0%;
-    height: 0%;
+    width: 30%;
+    min-width: 500px;
+    height: 60%;
     position: absolute;
     left: 50%;
     bottom: 0px;
+    color: black;
     transform: translateX(-50%);
     background-color: rgb(154, 214, 253);
     border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    opacity: 0;
     transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* !===== FOR DEBUGGING =====! */
+    bottom: 70px;
+}
+.start h3{
+    padding-left: 13px;
+}
+
+.pinned{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+.pinned-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc((100%)/6 - 10px);
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+}
+.pinned-icon img{
+    width: 30px;
+    height: 30px;
+}
+
+.start-end{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 60px;
+    opacity: 1;
+    background:rgb(76, 168, 230);
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.start-end-left{
+    justify-content: flex-start;
+    left: 0px;
+    position: absolute;
+    padding-left: 40px;
+}
+.start-end-right{
+    justify-content: flex-end;
+    position: absolute;
+    right: 0px;
+    margin-right: 30px;
+}
+.power-content{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: auto;
+    width: 200px;
+    background-color: rgb(0, 174, 255);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -4;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.power-items{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 10px;
+    /* cursor: default; */
+}
+.power-items:hover{
+    background-color: rgb(0, 153, 255);
 }
 
 /* ========== TASKBAR STYLIZING ========== */
@@ -91,6 +178,14 @@ section.taskbar{
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.taskbar img:hover{
+    transform: translateY(-10px);
+    /* background-color: #f3f3f3; */
+}
+.taskbar img:first-child:hover{
+    transform: translateY(0px);
 }
 .taskbarRight{
     justify-content: flex-end;

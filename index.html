@@ -1,95 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 11 Clone</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Windows 11 Clone</title>
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link rel="stylesheet" href="./style.css">
-    
-    <script>
-        function startTime() {
-            var today = new Date();
-            var h = today.getHours();
-            var ampm = h >= 12 ? 'PM' : 'AM';
-            h = h%12;
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('time').innerHTML =
-            h + ":" + m + " " + ampm;
-            var t = setTimeout(startTime, 500);
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        <link rel="stylesheet" href="./style.css">
+        
+        <script>
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var ampm = h >= 12 ? 'PM' : 'AM';
+                h = h%12;
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('time').innerHTML =
+                h + ":" + m + " " + ampm;
+                var t = setTimeout(startTime, 500);
 
-            var myDay = today.getDay();
-            var weekday = ['Sunday', 'Monday', 'Tuesday',
-                'Wednesday', 'Thursday', 'Friday', 'Saturday'
-            ];
-            document.getElementById('day').innerHTML = weekday[myDay];
+                var myDay = today.getDay();
+                var weekday = ['Sunday', 'Monday', 'Tuesday',
+                    'Wednesday', 'Thursday', 'Friday', 'Saturday'
+                ];
+                document.getElementById('day').innerHTML = weekday[myDay];
 
-            var dd = today.getDate();
-            var mm = today.getMonth()+1; //As January is 0.
-            var yyyy = today.getFullYear();
-            document.getElementById('date').innerHTML = dd + "/" + mm + "/" + yyyy;
-        }
-        function checkTime(i) {
-            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-            return i;
-        }
-    </script>
-</head>
-<body onload="startTime()">
-    <!-- ========== BACKGROUND VIDEO ========== -->
-    <video autoplay muted>
-        <source src="./imgs/video.webm" type="video/webm">
-    </video>
+                var dd = today.getDate();
+                var mm = today.getMonth()+1; //As January is 0.
+                var yyyy = today.getFullYear();
+                document.getElementById('date').innerHTML = dd + "/" + mm + "/" + yyyy;
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+    </head>
+    <body onload="startTime()">
 
-    <!-- ========== DESKTOP ICONS ========== -->
-    <section class=".icon-container">
-        <div class="icons" style="animation-delay: 0s;">
-            <img src="./imgs/chromeIcon.png">
-            <span>Google Chrome</span>
-        </div>
-        <div class="icons" style="animation-delay: 0.2s;">
-            <img src="./imgs/recycleBinIcon.png">
-            <span>Recycle Bin</span>
-        </div>
-        <div class="icons" style="animation-delay: 0.4s;">
-            <img src="./imgs/edgeIcon.png">
-            <span>Edge</span>
-        </div>
-        <div class="icons" style="animation-delay: 0.6s;">
-            <img src="./imgs/fileIcon.png">
-            <span>New Folder</span>
-        </div>
-    </section>
+        <!-- ========== BACKGROUND VIDEO ========== -->
+        <video autoplay muted>
+            <source src="./imgs/video.webm" type="video/webm">
+        </video>
 
-    <!-- ========== START MENU ========== -->
-    <section class="start" id="start">
-        Hello
-    </section>
-
-    <!-- ========== TASKBAR ========== -->
-    <section class="taskbar">
-        <img src="./imgs/startIcon.png" id="home">
-        <img src="./imgs/searchIcon.png" style="transform: scaleX(-1); width: 30px; height: 30px;">
-        <img src="./imgs/fileExplorerIcon.png">
-        <img src="./imgs/chromeIcon.png">
-        <img src="./imgs/edgeIcon.png">
-        <div class="taskbarRight">
-            <i class="fas fa-wifi"></i>
-            <i class="fas fa-volume-up"></i>
-            <div class="info">
-                <div class="info-text" id="time"></div>
-                <div class="info-text" id="day"></div>
-                <div class="info-text" id="date"></div>
+        <!-- ========== DESKTOP ICONS ========== -->
+        <section class=".icon-container">
+            <div class="icons" style="animation-delay: 0s;">
+                <img src="./imgs/chromeIcon.png">
+                <span>Google Chrome</span>
             </div>
-            <i class="far fa-comment-alt"></i>
-        </div>
-    </section>
+            <div class="icons" style="animation-delay: 0.2s;">
+                <img src="./imgs/recycleBinIcon.png">
+                <span>Recycle Bin</span>
+            </div>
+            <div class="icons" style="animation-delay: 0.4s;">
+                <img src="./imgs/edgeIcon.png">
+                <span>Edge</span>
+            </div>
+            <div class="icons" style="animation-delay: 0.6s;">
+                <img src="./imgs/fileIcon.png">
+                <span>New Folder</span>
+            </div>
+        </section>
 
-    <script src="./app.js"></script>
-</body>
+        <!-- ========== START MENU ========== -->
+        <section class="start" id="start" style="bottom: 0px;">
+            <h3>Pinned</h3>
+            <div class="pinned">
+                <a target="_blank" href="https://www.microsoft.com/en-us/edge" class="pinned-icon">
+                    <img src="./imgs/edgeIcon.png">
+                    <span>Microsoft Edge</span>
+                </a>
+                <a target="_blank" href="mailto: Jadit19@gmai.com" class="pinned-icon">
+                    <img src="./imgs/mailIcon.png">
+                    <span>Mail</span>
+                </a>
+                <a target="_blank" href="https://www.google.com/calendar/about/" class="pinned-icon">
+                    <img src="./imgs/calendarIcon.png">
+                    <span>Calender</span>              
+                </a>
+                <a target="_blank" href="https://www.microsoft.com/en-in/store/apps/windows" class="pinned-icon">
+                    <img src="./imgs/storeIcon.png">
+                    <span>Microsoft Store</span>
+                </a>
+                <a target="_blank" href="https://www.google.com/photos/about/" class="pinned-icon">
+                    <img src="./imgs/photosIcon.png">
+                    <span>Photos</span>
+                </a>
+                <a target="_blank" href="#" class="pinned-icon">
+                    <img src="./imgs/settingsIcon.png">
+                    <span>Settings</span>
+                </a>
+                <a target="_blank" href="https://www.office.com/" class="pinned-icon">
+                    <img src="./imgs/officeIcon.png">
+                    <span>Office</span>
+                </a>
+                <a target="_blank" href="https://www.xbox.com/" class="pinned-icon">
+                    <img src="./imgs/xboxIcon.png">
+                    <span>Xbox</span>
+                </a>
+                <a target="_blank" href="https://www.google.co.in/logos/fnbx/solitaire/standalone.html" class="pinned-icon">
+                    <img src="./imgs/solitaireICon.png">
+                    <span>Solitaire</span>
+                </a>
+                <a target="_blank" href="https://www.spotify.com/us/" class="pinned-icon">
+                    <img src="./imgs/spotifyIcon.png">
+                    <span>Spotify</span>
+                </a>
+                <a target="_blank" href="https://www.netflix.com/" class="pinned-icon">
+                    <img src="./imgs/netflixIcon.png">
+                    <span>Netflix</span>
+                </a>
+                <a target="_blank" href="#" class="pinned-icon">
+                    <img src="./imgs/toDoIcon.png">
+                    <span>To Do</span>
+                </a>
+                <a target="_blank" href="https://news.google.com/" class="pinned-icon">
+                    <img src="./imgs/newsIcon.png" style="height: auto;">
+                    <span>News</span>
+                </a>
+                <a target="_blank" href="https://twitter.com/?lang=en" class="pinned-icon">
+                    <img src="./imgs/twitterIcon.png">
+                    <span>Twitter</span>
+                </a>
+                <a target="_blank" href="https://www.messenger.com/" class="pinned-icon">
+                    <img src="./imgs/messengerIcon.png">
+                    <span>Messenger</span>
+                </a>
+                <a target="_blank" href="https://www.photoshop.com/en" class="pinned-icon">
+                    <img src="./imgs/photoshopIcon.png">
+                    <span>Photoshop Elements</span>
+                </a>
+                <a target="_blank" href="https://www.calculator.net/" class="pinned-icon">
+                    <img src="./imgs/calculatorIcon.png">
+                    <span>Calculator</span>
+                </a>
+                <a target="_blank" href="https://www.google.com/chrome/" class="pinned-icon">
+                    <img src="./imgs/chromeIcon.png">
+                    <span>Google Chrome</span>
+                </a>
+            </div>
+            <div class="start-end">
+                <div class="start-end-left">
+                    <i class="far fa-user-circle"></i>
+                    <span>Adit Jain</span>
+                </div>
+                <div class="start-end-right">
+                    <div class="power-content" id="power-content">
+                        <div style="text-align: right; padding-right: 5px;">
+                            <i class="far fa-times-circle" id="cross"></i>
+                        </div>
+                        <div class="power-items">
+                            <i class="fas fa-bed"></i>&nbsp;Sleep
+                        </div>
+                        <div class="power-items">
+                            <i class="fas fa-power-off"></i>&nbsp;Power-Off
+                        </div>
+                        <div class="power-items">
+                            <i class="fas fa-sync-alt"></i>&nbsp;Restart
+                        </div>
+                    </div>
+                    <i class="fas fa-power-off" id="power-off-btn" style="cursor: pointer;"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TASKBAR ========== -->
+        <section class="taskbar">
+            <img src="./imgs/startIcon.png" id="home">
+            <img src="./imgs/searchIcon.png" style="transform: scaleX(-1); width: 30px; height: 30px;">
+            <img src="./imgs/fileExplorerIcon.png">
+            <img src="./imgs/chromeIcon.png">
+            <img src="./imgs/edgeIcon.png">
+            <img src="./imgs/vsCodeIcon.png">
+            <div class="taskbarRight">
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-volume-up"></i>
+                <div class="info">
+                    <div class="info-text" id="time"></div>
+                    <div class="info-text" id="day"></div>
+                    <div class="info-text" id="date"></div>
+                </div>
+                <i class="far fa-comment-alt"></i>
+            </div>
+        </section>
+
+        <script src="./app.js"></script>
+    </body>
 </html>
