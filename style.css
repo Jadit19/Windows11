@@ -104,6 +104,38 @@ section.start{
     height: 30px;
 }
 
+.recommended{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+.recom-div{
+    margin-top: 7px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.recom-div img{
+    width: 40px;
+    height: 40px;
+}
+.doc-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+}
+.doc-info span{
+    margin-right: auto;
+}
+
 .start-end{
     position: absolute;
     bottom: 0px;
