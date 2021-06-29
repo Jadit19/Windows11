@@ -15,6 +15,9 @@
                 var h = today.getHours();
                 var ampm = h >= 12 ? 'PM' : 'AM';
                 h = h%12;
+                if (h == 0){
+                    h = 12;
+                }
                 var m = today.getMinutes();
                 var s = today.getSeconds();
                 m = checkTime(m);
