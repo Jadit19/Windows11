@@ -1,3 +1,7 @@
+var state1 = 0;
+var state2 = 0;
+
+//====================================================================
 
 var start = document.getElementById('start');
 var home = document.getElementById('home');
@@ -62,7 +66,8 @@ var h21 = document.getElementById('h21');
 var ele = document.getElementsByClassName('inside-div');
 var notif = document.getElementById('notif');
 messageBtn.addEventListener('click', () => {
-    if (message.style.right == "-400px"){
+    if (state1 == 0){
+        state1 = 1;
         message.style.right = "0px";
         redLine[0].style.animation = "sliding1 1.5s forwards";
         redLine[1].style.animation = "sliding2 1.3s forwards";
@@ -84,6 +89,7 @@ messageBtn.addEventListener('click', () => {
             ele[i].style.animationDelay = 3 + i/5 + "s";
         }
     } else {
+        state1 = 0;
         message.style.right = "-400px";
         redLine[0].style.animation = "none";
         redLine[1].style.animation = "none";
@@ -100,3 +106,27 @@ messageBtn.addEventListener('click', () => {
 });
 
 //=====================================================================
+
+var poppup = document.getElementById('poppup');
+var taskbarPoppup = document.getElementById('taskbarPoppup');
+poppup.addEventListener('click', () => {
+    if (state2 == 0){
+        state2 = 1;
+        poppup.style.transform = "rotateZ(180deg) translateY(17px)";
+        taskbarPoppup.style.opacity = 1;
+        taskbarPoppup.style.bottom = "70px";
+        if (state1 == 1){
+            taskbarPoppup.style.zIndex = 12;
+            taskbarPoppup.style.border = "1px solid black";
+        }
+    } else {
+        state2 = 0;
+        poppup.style.transform = "rotateZ(0deg) translateY(17px)";
+        taskbarPoppup.style.opacity = 0;
+        taskbarPoppup.style.bottom = "20px";
+        taskbarPoppup.style.zIndex = 0;
+        taskbarPoppup.style.border = "none";
+    }
+});
+
+//======================================================================

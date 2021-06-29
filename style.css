@@ -324,6 +324,28 @@ section.messages{
     }
 }
 
+/* ============================== TASKBAR POPPUP STYLIZING ============================== */
+section.taskbar-poppup{
+    position: absolute;
+    right: 145px;
+    /* opacity: 0; */
+    background-color: rgb(184, 227, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 130px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+}
+section.taskbar-poppup img{
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+}
+
 /* ============================== TASKBAR STYLIZING ============================== */
 section.taskbar{
     position: absolute;
