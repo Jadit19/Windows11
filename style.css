@@ -393,6 +393,7 @@ section.rightPoppup{
 .rightPoppup h4{
     font-size: 20px;
     padding-left: 30px;
+    padding-right: 20px;
 }
 .covering1{
     position: absolute;
@@ -419,6 +420,110 @@ section.rightPoppup{
     100%{
         width: 100%;
     }
+}
+
+/* ============================== TERMINAL STYLIZING ============================== */
+.terminal{
+    position: absolute;
+    left: 50%;
+    bottom: -160px;
+    transform: translateX(-50%);
+    width: 400px;
+    height: auto;
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    /* opacity: 0; */
+    z-index: -10;
+    transition: 0.5s ease-in-out;
+}
+.upperBox{
+    width: 100%;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: red;
+    padding: 3px;
+    background-color: grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.upperBox h6{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.upperBox div{
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    margin-left: auto;
+    right: 0px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.terminal h5{
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+.terminal form{
+    width: 100%;
+    position: relative;
+}
+.terminal textarea{
+    width: calc(100% - 20px);
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 25px;
+    height: 35px;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    /* overflow-y: auto; */
+}
+.terminal .meh{
+    position: absolute;
+    top: 7px;
+    left: 20px;
+}
+.inputContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+input{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+.submit{
+    padding: 8px 16px;
+    background: lightgreen;
+    margin-right: 5px;
+}
+.submit:hover{
+    background: lime;
+}
+.reset{
+    padding: 8px 16px;
+    background: rgb(255, 116, 116);
+}
+.reset:hover{
+    background: red;
 }
 
 /* ============================== TASKBAR STYLIZING ============================== */
@@ -456,7 +561,7 @@ section.taskbar{
     width: 0px;
     border-radius: 20px;
     position: absolute;
-    bottom: 6px;
+    /* bottom: 6px; */
     left: calc(50% - 60px);
     transform: translateX(-50%);
     border: 2px solid rgb(154, 214, 253);

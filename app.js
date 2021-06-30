@@ -50,7 +50,7 @@ searchLabel.addEventListener('click', () => {
         search.style.zIndex = 5;
         search.style.opacity = 1;
         search.style.width = "300px";
-        search.style.left = "calc(50% + 85px)";
+        search.style.left = "calc(50% + 55px)";
         search.style.outline = "6px solid #f3f3f3"
     } else {
         search.style.zIndex = -1;
@@ -200,3 +200,54 @@ function logMouseButton(event, x){
 }
 
 //=====================================================================
+
+var isClicked = 0;
+const terminalIcon = document.getElementById('terminalIcon');
+const terminal = document.getElementById('terminal');
+
+function terminalMouseButton(event){
+    switch (event.button) {
+        case 0:
+            if (isClicked == 1){
+                displayNotification('One Terminal is already open!');
+                return;
+            }
+            tabDiv[16].style.display = "block";
+            isClicked++;
+            terminal.style.opacity = 1;
+            terminal.style.zIndex = 2;
+            terminal.style.bottom = "70px";
+            break;
+        case 2:
+            if (isClicked == 0){
+                displayNotification('Please Open a terminal first');
+                return;
+            } else {
+                closeTerminal();
+                return;
+            }
+            break;
+        default:
+            alert('Please press either LMB or RMB');
+    }
+}
+
+function closeTerminal(){
+    tabDiv[16].style.display = "none";
+    terminal.style.opacity = 0;
+    terminal.style.zIndex = -12;
+    terminal.style.bottom = "-160px";
+    isClicked--;
+}
+
+var textarea = document.querySelector('textarea');
+textarea.addEventListener('keydown', autosize);            
+function autosize(){
+    var el = this;
+    setTimeout(() => {
+        el.style.cssText = 'height: 35px; padding: 10px;';
+        el.style.cssText = 'height:' + el.scrollHeight + 'px';
+    }, 0);
+}
+
+// ============================================================================
