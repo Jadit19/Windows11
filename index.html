@@ -281,17 +281,56 @@
             <img src="./imgs/angularJSIcon.svg">
         </section>
 
+        <!-- ============================== RIGHT POPPUP NOTIFICATION ============================== -->
+        <section class="rightPoppup" id="rightPoppup">
+            <h4 id="rightPoppupContent" style="z-index: 5;">Hello</h4>
+            <div class="covering1" id="covering1"></div>
+            <div class="covering2" id="covering2"></div>
+        </section>
+
         <!-- ============================== TASKBAR ============================== -->
-        <section class="taskbar">
+        <section class="taskbar" id="taskbar">
             <img src="./imgs/startIcon.png" id="home">
             <label for="search" id="search-label">
                 <img src="./imgs/searchIcon.png" style="transform: scaleX(-1); width: 30px; height: 30px;">
             </label>
             <input type="search" class="bottom-search" id="search" style="width: 0px;">
-            <img src="./imgs/fileExplorerIcon.png">
-            <img src="./imgs/chromeIcon.png">
-            <img src="./imgs/edgeIcon.png">
-            <img src="./imgs/vsCodeIcon.png">
+            <div clas="icon-tabs">
+                <img src="./imgs/fileExplorerIcon.png" onmousedown="logMouseButton(event, 0)">
+                <div class="tabs-container">
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                </div>
+            </div>
+            <div clas="icon-tabs">
+                <img src="./imgs/chromeIcon.png" onmousedown="logMouseButton(event, 1)">
+                <div class="tabs-container">
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                </div>
+            </div>
+            <div clas="icon-tabs">
+                <img src="./imgs/edgeIcon.png" onmousedown="logMouseButton(event, 2)">
+                <div class="tabs-container">
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                </div>
+            </div>
+            <div clas="icon-tabs">
+                <img src="./imgs/vsCodeIcon.png" onmousedown="logMouseButton(event, 3)">
+                <div class="tabs-container">
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                </div>
+            </div>
             <div class="taskbarRight">
                 <i class="fas fa-chevron-up" style="margin-right: 20px; cursor: pointer; transition: 0.3s" id="poppup"></i>
                 <i class="fas fa-wifi"></i>

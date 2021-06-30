@@ -1,6 +1,11 @@
 var state1 = 0;
 var state2 = 0;
 
+// Disable right click, for better user experience:
+window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+}, false);
+
 //====================================================================
 
 var start = document.getElementById('start');
@@ -46,6 +51,7 @@ searchLabel.addEventListener('click', () => {
         search.style.opacity = 1;
         search.style.width = "300px";
         search.style.left = "calc(50% + 85px)";
+        search.style.outline = "6px solid #f3f3f3"
     } else {
         search.style.zIndex = -1;
         search.style.opacity = 0;
@@ -130,3 +136,67 @@ poppup.addEventListener('click', () => {
 });
 
 //======================================================================
+
+var str;
+var rightPoppup = document.getElementById('rightPoppup');
+var c1 = document.getElementById('covering1');
+var c2 = document.getElementById('covering2');
+var rpContent = document.getElementById('rightPoppupContent');
+function displayNotification(str){
+    rightPoppup.style.right = "0px";
+    rpContent.innerHTML = str;
+    setTimeout(() => {
+        c1.style.animation = "show 1s ease-in-out forwards";
+        c2.style.animation = "show 1s ease-in-out forwards";
+        c2.style.animationDelay = "800ms"
+    }, 100);
+    setTimeout(() => {
+        console.log('Waiting..');
+        rightPoppup.style.right = "-250px";
+    }, 3000);
+    setTimeout(() => {
+        c1.style.animation = "none";
+        c2.style.animation = "none";
+    }, 4000);
+}
+
+var x;
+var tabs = [0, 0, 0, 0];
+var tabDiv = document.querySelectorAll('.tab');
+function logMouseButton(event, x){
+    switch (event.button) {
+        case 0:
+            if (tabs[x] >= 4) {
+                alert('Maximum occupancy reached! Please close some windows first!');
+                break;
+            }
+            tabDiv[tabs[x] + x*4].style.display = "block";
+            tabs[x]++;
+            break;
+        case 2:
+            if (tabs[x] > 0){
+                tabDiv[tabs[x] + x*4 - 1].style.display = "none";
+                tabs[x]--;
+            } else {
+                switch (x) {
+                    case 0:
+                        displayNotification('Open some File Explorer windows first..');
+                        break;
+                    case 1:
+                        displayNotification('Open some Google Chrome windows first..');
+                        break;
+                    case 2:
+                        displayNotification('Open some Microsoft Edge windows first..');
+                        break;
+                    case 3:
+                        displayNotification("Open some VS Code Windows first..");
+                        break;
+                }
+            }
+            break;
+        default:
+            alert(`Please click using LMB or RMB only!!`);
+    }
+}
+
+//=====================================================================
